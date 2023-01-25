@@ -1,0 +1,15 @@
+mixin spamRow(element)
+  tr.border.border-black
+    td.mx-6.p-2
+      div Id: #{element.id.split("-").pop()}
+      div.flex
+        div State:
+        div.ml-1.capitalize-lower-case #{element.state}
+    td.mx-4.p-2
+      div.flex
+        div Type:
+        div.ml-1.capitalize-lower-case #{element.payload.reportType}
+      div.truncate Message: #{element.payload.message}
+    td.mx-4.p-2.flex.flex-col
+      button(id=`block`, data-reportid=`${element.id}`).mb-1.px-6.bg-gray.border.border-black.rounded Block
+      button(id=`resolve`, data-href=`reports/${element.id}`).px-6.bg-gray.border.border-black.rounded Resolve

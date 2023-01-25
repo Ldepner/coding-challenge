@@ -1,0 +1,45 @@
+include mixins.pug
+
+doctype html
+html(lang="en")
+    head
+      meta(charset="utf-8")
+      meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+      script(src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous")
+      link(href="/styles/style.css", rel="stylesheet", type="text/css")
+
+    body
+      h1.p-2.text-2xl.font-medium Reports
+      div.Message
+        table.m-2
+          for spamReport in spamReports
+            +spamRow(spamReport)
+      
+      script.
+        $(`#resolve`).on("click", function() {
+          $.ajax({
+            type: 'PUT',
+            url: `/${$(event.target).data("href")}`,
+            data: JSON.stringify({
+              ticketState: "CLOSED"
+            }),
+            contentType: 'application/json',
+            success: function(result) {
+              window.location.reload()
+            }
+          })
+        })
+
+        $(`#block`).on("click", function() {
+          $.ajax({
+            type: 'POST',
+            url: `/block`,
+            data: JSON.stringify({
+              reportId: `${$(event.target).data("reportid")}`
+            }),
+            contentType: 'application/json',
+            success: function(result) {
+              window.location.reload()
+            }
+          })
+        })

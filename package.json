@@ -1,0 +1,31 @@
+{
+  "name": "spam-manager",
+  "version": "1.0.0",
+  "description": "block and resolve spam reports",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morkro/coding-challenge.git"
+  },
+  "author": "LDepner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morkro/coding-challenge/issues"
+  },
+  "homepage": "https://github.com/morkro/coding-challenge#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.4",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "pug": "^3.0.2",
+    "tailwindcss": "^3.2.4"
+  }
+}
