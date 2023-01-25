@@ -1,3 +1,13 @@
+# Instructions
+
+> npm install
+
+will install dependencies
+
+> npm start
+
+will run the app on `localhost:3000` and seed the database.
+
 # Example Full-Stack Challenge
 
 We're excited that you're interested in performing the coding challenge.

@@ -1,8 +1,8 @@
 const express = require('express');
-var bodyParser = require('body-parser');
 const path = require('path');
-const seeds = require("./data/seedScript");
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const seeds = require("./data/seedScript");
 const SpamReport = require("./models/spamReport");
 
 require('dotenv').config();
